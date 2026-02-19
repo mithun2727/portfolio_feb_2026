@@ -3,6 +3,19 @@ import { motion } from 'framer-motion';
 import { Download, FileText } from 'lucide-react';
 
 const Resume = () => {
+    const handleViewResume = () => {
+        window.open('/ffinalunchecked_jan27.pdf', '_blank');
+    };
+
+    const handleDownloadResume = () => {
+        const link = document.createElement('a');
+        link.href = '/ffinalunchecked_jan27.pdf';
+        link.download = 'Mithun_K_Resume.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     return (
         <section id="resume" className="relative py-32 px-8 md:px-16">
             <motion.div
@@ -51,10 +64,16 @@ const Resume = () => {
                         viewport={{ once: true }}
                         transition={{ delay: 0.6 }}
                     >
-                        <button className="btn-primary flex items-center justify-center gap-3 text-lg">
+                        <button 
+                            onClick={handleViewResume}
+                            className="btn-primary flex items-center justify-center gap-3 text-lg"
+                        >
                             <FileText className="w-5 h-5" /> View Resume
                         </button>
-                        <button className="btn-secondary flex items-center justify-center gap-3 text-lg">
+                        <button 
+                            onClick={handleDownloadResume}
+                            className="btn-secondary flex items-center justify-center gap-3 text-lg"
+                        >
                             <Download className="w-5 h-5" /> Download PDF
                         </button>
                     </motion.div>
@@ -66,8 +85,12 @@ const Resume = () => {
                         viewport={{ once: true }}
                         transition={{ delay: 0.8 }}
                     >
-                        <div className="h-80 flex items-center justify-center text-gray-400 italic text-xl font-light">
-                            Resume Preview Illustration
+                        <div className="h-80 flex items-center justify-center">
+                            <iframe
+                                src="/ffinalunchecked_jan27.pdf"
+                                className="w-full h-full rounded-2xl"
+                                title="Resume Preview"
+                            />
                         </div>
                     </motion.div>
                 </div>
