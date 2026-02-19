@@ -1,0 +1,73 @@
+/* Premium monochrome styles */
+.project-image-container {
+  overflow: hidden;
+  border-radius: 1.5rem;
+  position: relative;
+}
+
+.project-image-container img {
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: grayscale(100%);
+}
+
+.project-image-container:hover img {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+}
+
+.hero-image-wrapper {
+  position: relative;
+  transition: transform 0.8s ease;
+}
+
+.hero-image-wrapper:hover {
+  transform: translateY(-12px);
+}
+
+/* Elegant elevation effect */
+.elegant-hover {
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.elegant-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* Premium card animations */
+.premium-card {
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-card:hover {
+  transform: translateY(-16px);
+}
+
+/* Parallax effect */
+.parallax-element {
+  transition: transform 0.5s ease-out;
+}
+
+/* Radial light effect */
+.radial-light {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Image reveal on scroll */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
